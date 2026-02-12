@@ -4,7 +4,7 @@ Proyecto de Algoritmos y Estructuras de Datos - Universidad del Valle de Guatema
 
 ## Descripción
 
-Implementación de un intérprete para un subconjunto de Bitcoin Script que permite validar scripts de bloqueo (scriptPubKey) y desbloqueo (scriptSig) en un entorno didáctico.
+Implementación de un intérprete para un subconjunto de Bitcoin Script que permite validar scripts de bloqueo (scriptPubKey) y desbloqueo (scriptSig).
 
 ## Equipo
 
@@ -12,7 +12,7 @@ Implementación de un intérprete para un subconjunto de Bitcoin Script que perm
 - Mauricio Adrian Corado Castañeda - 25218
 - Joseph Alfredo Gongora Giron - 25051
 
-## Opcodes Implementados (Fase 1)
+## Opcodes Implementados
 
 - Literales: `OP_0`, `OP_1..OP_16`, `PUSHDATA`
 - Stack: `OP_DUP`, `OP_DROP`
@@ -23,7 +23,7 @@ Implementación de un intérprete para un subconjunto de Bitcoin Script que perm
 
 - **Lenguaje:** Java 17+
 - **Testing:** JUnit 5
-- **Java Collections:** `ArrayDeque`, `ArrayList`, `Map`
+- **Java Collections:** `ArrayDeque`, `ArrayList`
 
 ## Estructura del Proyecto
 ```
