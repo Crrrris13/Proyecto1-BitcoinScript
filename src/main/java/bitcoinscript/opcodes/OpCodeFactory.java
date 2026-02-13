@@ -1,5 +1,5 @@
-package main.java.bitcoinscript.opcodes;
-
 public class OpCodeFactory {
     
+    public static OpCode getInstruction(String instruction) {
+    }
 }

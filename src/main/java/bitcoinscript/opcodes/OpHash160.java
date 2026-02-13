@@ -1,5 +1,3 @@
-package main.java.bitcoinscript.opcodes;
-
-public class OpHash160 {
+public class OpHash160 implements OpCode {
     
 }

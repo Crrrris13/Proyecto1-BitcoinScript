@@ -1,5 +1,4 @@
-package main.java.bitcoinscript.opcodes;
-
 public interface OpCode {
-    
-}
+
+    public void execute(BitcoinStack stack);
+} 

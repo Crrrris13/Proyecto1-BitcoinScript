@@ -23,7 +23,7 @@ Implementación de un intérprete para un subconjunto de Bitcoin Script que perm
 
 - **Lenguaje:** Java 17+
 - **Testing:** JUnit 5
-- **Java Collections:** `ArrayDeque`, `ArrayList`
+- **Java Collections:** `ArrayDeque`, `ArrayList`, `HashMap`
 
 ## Estructura del Proyecto
 ```

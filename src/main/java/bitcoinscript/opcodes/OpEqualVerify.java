@@ -1,5 +1,3 @@
-package main.java.bitcoinscript.opcodes;
-
-public class OpEqualVerify {
+public class OpEqualVerify implements OpCode {
     
 }

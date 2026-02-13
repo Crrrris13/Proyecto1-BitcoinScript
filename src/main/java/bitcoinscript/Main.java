@@ -1,5 +1,5 @@
-package main.java.bitcoinscript;
-
 public class Main {
-
+    public static void main(String[] args) {
+        
+    }
 }

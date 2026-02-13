@@ -1,5 +1,3 @@
-package main.java.bitcoinscript.opcodes;
-
-public class OpDup {
+public class OpDup implements OpCode {
     
 }

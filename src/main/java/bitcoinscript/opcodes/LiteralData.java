@@ -1,5 +1,6 @@
-package main.java.bitcoinscript.opcodes;
+public class LiteralData implements OpCode {
+    public String value;
 
-public class LiteralData {
-    
+    public void execute(BitcoinStack stack) {
+    }
 }
