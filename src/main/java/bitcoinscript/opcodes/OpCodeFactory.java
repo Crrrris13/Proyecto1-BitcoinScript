@@ -1,7 +1,7 @@
 public class OpCodeFactory {
 
-    public OpCode getInstruction(String instruction) {
-        switch (instruction) {
+    public static OpCode getInstruction(String token) {
+        switch (token) {
             case "OP_DUP":
                 return new OpDup();
 
@@ -22,57 +22,57 @@ public class OpCodeFactory {
 
             case "OP_0":
             case "OP_FALSE":
-                return new LiteralData("0");
+                return new PushData("0");
             case "OP_1":
             case "OP_TRUE":
-                return new LiteralData("1");
+                return new PushData("1");
             
             case "OP_2":
-                return new LiteralData("2");
+                return new PushData("2");
             
             case "OP_3":
-                return new LiteralData("3");
+                return new PushData("3");
 
             case "OP_4":
-                return new LiteralData("4");
+                return new PushData("4");
 
             case "OP_5":
-                return new LiteralData("5");
+                return new PushData("5");
 
             case "OP_6":
-                return new LiteralData("6");
+                return new PushData("6");
 
             case "OP_7":
-                return new LiteralData("7");
+                return new PushData("7");
 
             case "OP_8":
-                return new LiteralData("8");
+                return new PushData("8");
 
             case "OP_9":
-                return new LiteralData("9");
+                return new PushData("9");
 
             case "OP_10":
-                return new LiteralData("10");
+                return new PushData("10");
 
             case "OP_11":
-                return new LiteralData("11");
+                return new PushData("11");
             
             case "OP_12":
-                return new LiteralData("12");
+                return new PushData("12");
             
             case "OP_13":
-                return new LiteralData("13");
+                return new PushData("13");
 
             case "OP_14":
-                return new LiteralData("14");
+                return new PushData("14");
 
             case "OP_15":
-                return new LiteralData("15");
+                return new PushData("15");
 
             case "OP_16":
-                return new LiteralData("16");
+                return new PushData("16");
             default:
-                return new LiteralData(instruction);
+                return new PushData(token);
         }
     }
 }

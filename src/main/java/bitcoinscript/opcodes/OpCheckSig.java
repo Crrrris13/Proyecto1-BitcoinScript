@@ -15,8 +15,12 @@ public class OpCheckSig implements OpCode {
     }
 
     @Override
-    public String toString() {
+    public String getName() {
         return "OP_CHECKSIG";
     }
-    
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

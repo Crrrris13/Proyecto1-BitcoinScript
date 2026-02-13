@@ -13,8 +13,13 @@ public class OpEqual implements OpCode {
     }
 
     @Override
-    public String toString() {
+    public String getName() {
         return "OP_EQUAL";
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
     
 }

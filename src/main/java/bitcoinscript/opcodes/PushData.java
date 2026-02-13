@@ -1,7 +1,7 @@
-public class LiteralData implements OpCode {
+public class PushData implements OpCode {
     private String value;
 
-    public LiteralData(String value) {
+    public PushData(String value) {
         this.value = value;
     }
 
@@ -11,7 +11,12 @@ public class LiteralData implements OpCode {
     }
 
     @Override
+    public String getName() {
+        return "PUSH(" + value + ")";
+    }
+
+    @Override
     public String toString() {
-        return value;
+        return getName();
     }
 }

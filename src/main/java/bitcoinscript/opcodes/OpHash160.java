@@ -8,7 +8,12 @@ public class OpHash160 implements OpCode {
     }
 
     @Override
-    public String toString() {
+    public String getName() {
         return "OP_HASH160";
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }

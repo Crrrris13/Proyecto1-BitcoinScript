@@ -11,7 +11,13 @@ public class OpEqualVerify implements OpCode {
     }
 
     @Override
-    public String toString() {
+    public String getName() {
         return "OP_EQUALVERIFY";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
 }

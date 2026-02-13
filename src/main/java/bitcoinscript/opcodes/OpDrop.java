@@ -6,8 +6,13 @@ public class OpDrop implements OpCode {
     }
 
     @Override
-    public String toString() {
+    public String getName() {
         return "OP_DROP";
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
     
 }
