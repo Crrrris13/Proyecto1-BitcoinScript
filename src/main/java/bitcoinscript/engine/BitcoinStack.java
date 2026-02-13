@@ -1,7 +1,8 @@
 import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class BitcoinStack {
-    private ArrayDeque<String> elements;
+    private Deque<String> elements;
 
     public BitcoinStack() {
         this.elements = new ArrayDeque<>();
