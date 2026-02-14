@@ -10,7 +10,7 @@ public class OpCheckSig implements OpCode {
         String publicKey = stack.pop();
         String signature = stack.pop();
 
-        boolean isValid = CryptoMock.verifySignature(publicKey, signature);
+        boolean isValid = CryptoMock.verifySignature(signature, publicKey);
         
         if (isValid) {
             stack.push("1");
