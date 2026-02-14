@@ -7,7 +7,7 @@ import bitcoinscript.view.View;
 public class Main {
     public static void main(String[] args) {
 
-        ScriptEngine engine = new ScriptEngine(true); 
+        ScriptEngine engine = new ScriptEngine();
         View view = new View();
         Controller controller = new Controller(engine, view);
         String firma = "firma_valida";

@@ -8,10 +8,20 @@ public class Controller {
     private ScriptEngine engine;
     private View view;
     
-    public void startValidation(String scriptSig, String scriptPubKey) {
+    public Controller(ScriptEngine engine, View view) {
+        this.engine = engine;
+        this.view = view;
     }
 
-    public void startForward() {
+    public void runDemo(String scriptSig, String scriptPubKey) {
+        
+        view.showHeader();
+        view.showScripts(scriptSig, scriptPubKey);
+
+        boolean result = engine.executeScript(scriptSig, scriptPubKey);
+
+        view.showResult(result);
+        view.showFooter();
     }
 
 }
