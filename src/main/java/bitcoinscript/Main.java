@@ -9,14 +9,12 @@ public class Main {
 
         ScriptEngine engine = new ScriptEngine();
         View view = new View();
-        Controller controller = new Controller(engine, view);
-        String firma = "firma_valida";
-        String pubKey = "clave_publica";
-        String pubKeyHash = "hash_clave_publica";
+        Controller controller = new Controller(engine, view);;
+        String firma = "SIG_user1";
+        String pubKey = "PUB_user1";
+        String pubKeyHash = "HASH160(" + pubKey + ")";
         String scriptSig = firma + " " + pubKey;
-        String scriptPubKey =
-                "OP_DUP OP_HASH160 " + pubKeyHash +
-                " OP_EQUALVERIFY OP_CHECKSIG";
+        String scriptPubKey = "OP_DUP OP_HASH160 " + pubKeyHash + " OP_EQUALVERIFY OP_CHECKSIG";
         controller.runDemo(scriptSig, scriptPubKey);
     }
 }

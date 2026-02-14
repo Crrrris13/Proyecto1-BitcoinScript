@@ -36,6 +36,9 @@ public class ScriptEngine {
 
             for (int i = 0; i < instructions.size(); i++) {
                 OpCode instruction = instructions.get(i);
+                if (traceMode) {
+                    System.out.println("Stack: " + mainStack);
+                }
                 
                 if (traceMode) {
                     System.out.println("Paso " + (i + 1) + ": " + instruction.getName());
@@ -60,7 +63,7 @@ public class ScriptEngine {
                 System.out.println("Script validado correctamente");
                 System.out.println("Elemento final en pila: " + topElement);
             } else {
-                System.out.println("Elemento final es falso)");
+                System.out.println("Elemento final es falso");
             }
             
             return isValid;
@@ -80,6 +83,9 @@ public class ScriptEngine {
         
         for (String token : tokens) {
             OpCode instruction = OpCodeFactory.getInstruction(token);
+            if (traceMode) {
+                System.out.println("Stack: " + mainStack);
+            }
             
             if (instruction == null) {
                 throw new RuntimeException("Token inválido: " + token);
