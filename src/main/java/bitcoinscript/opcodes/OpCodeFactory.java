@@ -1,3 +1,5 @@
+package bitcoinscript.opcodes;
+
 public class OpCodeFactory {
 
     public static OpCode getInstruction(String token) {

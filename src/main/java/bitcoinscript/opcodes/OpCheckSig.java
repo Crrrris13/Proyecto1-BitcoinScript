@@ -1,3 +1,8 @@
+package bitcoinscript.opcodes;
+
+import bitcoinscript.crypto.CryptoMock;
+import bitcoinscript.engine.BitcoinStack;
+
 public class OpCheckSig implements OpCode {
     
     @Override

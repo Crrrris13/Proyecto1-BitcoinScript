@@ -1,3 +1,5 @@
+package bitcoinscript.crypto;
+
 public class CryptoMock {
 
     public static String hash160(String data) {

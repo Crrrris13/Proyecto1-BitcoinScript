@@ -1,3 +1,7 @@
+package bitcoinscript.engine;
+
+import bitcoinscript.opcodes.OpCode;
+import bitcoinscript.opcodes.OpCodeFactory;
 import java.util.ArrayList;
 import java.util.List;
 

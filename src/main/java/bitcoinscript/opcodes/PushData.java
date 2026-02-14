@@ -1,3 +1,7 @@
+package bitcoinscript.opcodes;
+
+import bitcoinscript.engine.BitcoinStack;
+
 public class PushData implements OpCode {
     private String value;
 

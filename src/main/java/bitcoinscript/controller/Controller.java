@@ -1,3 +1,8 @@
+package bitcoinscript.controller;
+
+import bitcoinscript.engine.ScriptEngine;
+import bitcoinscript.view.View; 
+
 public class Controller {
 
     private ScriptEngine engine;
