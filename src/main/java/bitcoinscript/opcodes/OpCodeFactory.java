@@ -21,7 +21,8 @@ public class OpCodeFactory {
 
             case "OP_CHECKSIG":
                 return new OpCheckSig();
-
+            case "OP_ADD":
+                return new OpAdd();
             case "OP_0":
             case "OP_FALSE":
                 return new PushData("0");

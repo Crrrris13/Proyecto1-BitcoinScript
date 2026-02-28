@@ -49,7 +49,7 @@ public class BitcoinStack {
 
     public String toString() {
         if (isEmpty()) {
-            throw new RuntimeException("La pila esta vacia");
+            return "[]";
         }
         StringBuilder sb = new StringBuilder("[");
         boolean first = true;

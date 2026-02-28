@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         ScriptEngine engine = new ScriptEngine();
+        engine.setTraceMode(true); // Activar modo TRACE para mostrar detalles de la ejecución
         View view = new View();
         Controller controller = new Controller(engine, view);;
         String firma = "SIG_user1";
