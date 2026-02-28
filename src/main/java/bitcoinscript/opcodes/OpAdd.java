@@ -2,12 +2,9 @@ package bitcoinscript.opcodes;
 
 import bitcoinscript.engine.BitcoinStack;
 
-public class OpAdd {
+public class OpAdd implements OpCode {
 
     public void execute(BitcoinStack stack) {
-        if (stack.size() < 2) {
-            throw new RuntimeException("Se requieren al menos dos elementos en la pila");
-        }
         String b = stack.pop();
         String a = stack.pop();
         try {
