@@ -27,6 +27,8 @@ public class OpCodeFactory {
                 return new OpSub();
             case "OP_BOOLAND":
                 return new OpBooland();
+            case "OP_NOT":
+                return new OpNot(); 
             case "OP_0":
             case "OP_FALSE":
                 return new PushData("0");
