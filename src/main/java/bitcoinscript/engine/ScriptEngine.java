@@ -4,16 +4,21 @@ import bitcoinscript.opcodes.OpCode;
 import bitcoinscript.opcodes.OpCodeFactory;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class ScriptEngine {
     private BitcoinStack mainStack;
     private List<OpCode> instructions;
     private boolean traceMode;
+    private Stack<Boolean> executionStack;
+    private Stack<Boolean> elseStack;
 
     public ScriptEngine() {
         this.mainStack = new BitcoinStack();
         this.instructions = new ArrayList<>();
         this.traceMode = false;
+        this.executionStack = new Stack<>();
+
     }
     
     public void setTraceMode(boolean enabled) {
@@ -23,6 +28,7 @@ public class ScriptEngine {
     public boolean executeScript(String scriptSig, String scriptPubKey) {
         try {
             mainStack = new BitcoinStack();
+            executionStack.clear();
             instructions.clear();
             
             parseScript(scriptSig);
@@ -100,4 +106,51 @@ public class ScriptEngine {
         state.add(mainStack.toString());
         return state;
     }
+
+    public boolean shouldExecute() {
+        if (executionStack.isEmpty()) {
+            return true;
+        }
+        
+        for (boolean condition : executionStack) {
+            if (!condition) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void enterIf(boolean condition) {
+        executionStack.push(condition);
+        elseStack.push(false);
+    }
+
+    public void enterElse() {
+        if (executionStack.isEmpty()) {
+            throw new RuntimeException("OP_ELSE sin OP_IF correspondiente");
+        }
+
+        if (elseStack.isEmpty()) {
+            throw new RuntimeException("OP_ELSE duplicado");
+        }
+
+        boolean wasExecuted = executionStack.pop();
+        executionStack.push(!wasExecuted);
+
+        elseStack.pop();
+        elseStack.push(true);
+    }
+
+    public void exitIf() {
+        if (executionStack.isEmpty()) {
+            throw new RuntimeException("OP_ENDIF sin OP_IF correspondiente");
+        }
+        executionStack.pop();
+        if (!elseStack.isEmpty()) {
+            elseStack.pop();
+        }
+    }
+
+
 }
