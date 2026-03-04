@@ -29,6 +29,13 @@ public class OpCodeFactory {
                 return new OpBooland();
             case "OP_NOT":
                 return new OpNot(); 
+            case "OP_IF":
+                return new OpIf();
+            case "OP_ELSE":
+                return new OpElse();
+            case "OP_ENDIF":
+                return new OpEndIf();
+
             case "OP_0":
             case "OP_FALSE":
                 return new PushData("0");
