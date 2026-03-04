@@ -3,7 +3,7 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
-public class OpBoolOr {
+public class OpBoolOr implements OpCode {
 
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String b = stack.pop();

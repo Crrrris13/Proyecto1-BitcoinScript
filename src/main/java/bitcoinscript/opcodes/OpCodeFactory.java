@@ -35,7 +35,12 @@ public class OpCodeFactory {
                 return new OpElse();
             case "OP_ENDIF":
                 return new OpEndIf();
-
+            case "OP_BOOLOR":
+                return new OpBoolOr();
+            case "OP_RETURN":
+                return new OpReturn();
+            case "OP_VERIFY":
+                return new OpVerify();
             case "OP_0":
             case "OP_FALSE":
                 return new PushData("0");
