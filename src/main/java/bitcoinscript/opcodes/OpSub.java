@@ -1,10 +1,11 @@
 package bitcoinscript.opcodes;
 
 import bitcoinscript.engine.BitcoinStack;
+import bitcoinscript.engine.ScriptEngine;
 
 public class OpSub implements OpCode {
 
-    public void execute(BitcoinStack stack) {
+    public void execute(BitcoinStack stack, ScriptEngine engine) {
         String bStr = stack.pop();
         String aStr = stack.pop();
         int a = Integer.parseInt(aStr);

@@ -1,11 +1,12 @@
 package bitcoinscript.opcodes;
 
 import bitcoinscript.engine.BitcoinStack;
+import bitcoinscript.engine.ScriptEngine;
 
 public class OpEqual implements OpCode {
     
     @Override
-    public void execute(BitcoinStack stack) {
+    public void execute(BitcoinStack stack, ScriptEngine engine) {
         String value1 = stack.pop();
         String value2 = stack.pop();
         

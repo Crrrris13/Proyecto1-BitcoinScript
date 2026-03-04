@@ -14,5 +14,10 @@ public class OpEndIf implements OpCode {
     public String getName() {
         return "OP_ENDIF";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
     
 }

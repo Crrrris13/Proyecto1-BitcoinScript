@@ -14,5 +14,10 @@ public class OpElse implements OpCode {
     public String getName() {
         return "OP_ELSE";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
     
 }

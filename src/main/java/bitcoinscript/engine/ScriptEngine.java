@@ -50,7 +50,7 @@ public class ScriptEngine {
                     System.out.println("Paso " + (i + 1) + ": " + instruction.getName());
                 }
                 
-                instruction.execute(mainStack);
+                instruction.execute(mainStack, this);
                 
                 if (traceMode) {
                     System.out.println("  Pila: " + mainStack.toString());
