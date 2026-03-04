@@ -3,27 +3,28 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
-public class OpNot implements OpCode {
-    
+public class OpBoolOr {
+
     public void execute(BitcoinStack stack, ScriptEngine engine) {
-        String value = stack.pop();
-        if (isTrue(value)) {
-            stack.push("0");
-        } else {
+        String b = stack.pop();
+        String a = stack.pop();
+        if (isTrue(a) || isTrue(b)) {
             stack.push("1");
+        } else {
+            stack.push("0");    
         }
     }
 
-    private boolean isTrue(String value) {
-        return !value.equals("0") && !value.equals("");
-    }
-
     public String getName() {
-        return "OP_NOT";
+        return "OP_BOOLOR";
     }
 
     public String toString() {
         return getName();
+    }
+
+    private boolean isTrue(String value) {
+        return !value.equals("0") && !value.equals("");
     }
     
 }
