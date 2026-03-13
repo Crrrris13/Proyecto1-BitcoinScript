@@ -9,7 +9,7 @@ public class OpVerify implements OpCode {
         String value = stack.pop();
         
         if (value.equals("0")) {
-            throw new RuntimeException("El valor en la cima es falso.");
+            throw new RuntimeException("El valor en la cima es falso");
         }
     }
 

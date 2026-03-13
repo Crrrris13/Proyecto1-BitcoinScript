@@ -1,9 +1,9 @@
 package bitcoinscript.opcodes;
 
 import bitcoinscript.engine.BitcoinStack;
-import bitcoinscript.engine.ScriptEngine; 
+import bitcoinscript.engine.ScriptEngine;
 
-public class OpGreaterThan implements OpCode {
+public class OpNumEqualVerify implements OpCode {
 
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
@@ -13,20 +13,17 @@ public class OpGreaterThan implements OpCode {
         try {
             int b = Integer.parseInt(bStr);
             int a = Integer.parseInt(aStr);
-            
-            if (a > b) {
-                stack.push("1");
-            } else {
-                stack.push("0");
-            }
+            if (a != b) {
+                throw new RuntimeException("Los números no son iguales");
+            }      
         } catch (NumberFormatException e) {
-            throw new RuntimeException("OP_GREATERTHAN: Los operandos deben ser números enteros");
+            throw new RuntimeException("Los operandos deben ser enteros");
         }
     }
 
     @Override
     public String getName() {
-        return "OP_GREATERTHAN";
+        return "OP_NUMEQUALVERIFY";
     }
 
     @Override

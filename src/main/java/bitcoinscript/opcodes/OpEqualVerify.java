@@ -11,7 +11,7 @@ public class OpEqualVerify implements OpCode {
         String value2 = stack.pop();
         
         if (!value1.equals(value2)) {
-            throw new RuntimeException("Los valores no son iguales. Script fallido.");
+            throw new RuntimeException("Los valores no son iguales. Script fallido");
         }
     }
 
