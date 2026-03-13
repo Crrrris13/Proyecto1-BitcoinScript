@@ -20,7 +20,7 @@ public class OpGreaterThan implements OpCode {
                 stack.push("0");
             }
         } catch (NumberFormatException e) {
-            throw new RuntimeException("OP_GREATERTHAN: Los operandos deben ser números enteros");
+            throw new RuntimeException("Los operandos deben ser números enteros");
         }
     }
 

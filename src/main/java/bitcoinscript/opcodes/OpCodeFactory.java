@@ -46,6 +46,14 @@ public class OpCodeFactory {
                 return new OpLessThan();
             case "OP_NUMEQUALVERIFY":
                 return new OpNumEqualVerify();
+            case "OP_NOTIF": 
+                return new OpNotIf();
+            case "OP_SWAP": 
+                return new OpSwap();
+            case "OP_OVER": 
+                return new OpOver();
+            case "OP_CHECKSIGVERIFY": 
+                return new OpCheckSigVerify();
             case "OP_0": 
             case "OP_FALSE": 
                 return new OpLiteral("0", "OP_0");
