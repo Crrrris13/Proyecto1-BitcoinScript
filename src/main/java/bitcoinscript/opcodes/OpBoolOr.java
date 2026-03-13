@@ -5,6 +5,7 @@ import bitcoinscript.engine.ScriptEngine;
 
 public class OpBoolOr implements OpCode {
 
+    @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String b = stack.pop();
         String a = stack.pop();
@@ -15,10 +16,11 @@ public class OpBoolOr implements OpCode {
         }
     }
 
+    @Override
     public String getName() {
         return "OP_BOOLOR";
     }
-
+    @Override
     public String toString() {
         return getName();
     }

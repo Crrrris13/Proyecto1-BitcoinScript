@@ -5,6 +5,7 @@ import bitcoinscript.engine.ScriptEngine;
 
 public class OpBooland implements OpCode {
 
+    @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String b = stack.pop();
         String a = stack.pop();
@@ -14,11 +15,11 @@ public class OpBooland implements OpCode {
             stack.push("0");    
         }
     }
-    
+    @Override
     public String getName() {
         return "OP_BOOLAND";
     }
-
+    @Override
     public String toString() {
         return getName();
     }

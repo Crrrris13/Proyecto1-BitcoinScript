@@ -6,19 +6,14 @@ public class OpCodeFactory {
         switch (token) {
             case "OP_DUP":
                 return new OpDup();
-
             case "OP_DROP":
                 return new OpDrop();
-
             case "OP_HASH160":
                 return new OpHash160();
-
             case "OP_EQUAL":
-                return new OpEqual();
-            
+                return new OpEqual();   
             case "OP_EQUALVERIFY":
                 return new OpEqualVerify();
-
             case "OP_CHECKSIG":
                 return new OpCheckSig();
             case "OP_ADD":
@@ -41,57 +36,41 @@ public class OpCodeFactory {
                 return new OpReturn();
             case "OP_VERIFY":
                 return new OpVerify();
-            case "OP_0":
-            case "OP_FALSE":
-                return new PushData("0");
-            case "OP_1":
-            case "OP_TRUE":
-                return new PushData("1");
-            
-            case "OP_2":
-                return new PushData("2");
-            
-            case "OP_3":
-                return new PushData("3");
-
-            case "OP_4":
-                return new PushData("4");
-
-            case "OP_5":
-                return new PushData("5");
-
-            case "OP_6":
-                return new PushData("6");
-
-            case "OP_7":
-                return new PushData("7");
-
-            case "OP_8":
-                return new PushData("8");
-
-            case "OP_9":
-                return new PushData("9");
-
-            case "OP_10":
-                return new PushData("10");
-
-            case "OP_11":
-                return new PushData("11");
-            
-            case "OP_12":
-                return new PushData("12");
-            
-            case "OP_13":
-                return new PushData("13");
-
-            case "OP_14":
-                return new PushData("14");
-
-            case "OP_15":
-                return new PushData("15");
-
-            case "OP_16":
-                return new PushData("16");
+            case "OP_0": 
+            case "OP_FALSE": 
+                return new OpLiteral("0", "OP_0");
+            case "OP_1": 
+                return new OpLiteral("1", "OP_1");
+            case "OP_2": 
+                return new OpLiteral("2", "OP_2");
+            case "OP_3": 
+                return new OpLiteral("3", "OP_3");
+            case "OP_4": 
+                return new OpLiteral("4", "OP_4");
+            case "OP_5": 
+                return new OpLiteral("5", "OP_5");
+            case "OP_6": 
+                return new OpLiteral("6", "OP_6");
+            case "OP_7": 
+                return new OpLiteral("7", "OP_7");
+            case "OP_8": 
+                return new OpLiteral("8", "OP_8");
+            case "OP_9": 
+                return new OpLiteral("9", "OP_9");
+            case "OP_10": 
+                return new OpLiteral("10", "OP_10");
+            case "OP_11": 
+                return new OpLiteral("11", "OP_11");
+            case "OP_12": 
+                return new OpLiteral("12", "OP_12");
+            case "OP_13": 
+                return new OpLiteral("13", "OP_13");
+            case "OP_14": 
+                return new OpLiteral("14", "OP_14");
+            case "OP_15": 
+                return new OpLiteral("15", "OP_15");
+            case "OP_16": 
+                return new OpLiteral("16", "OP_16");
             default:
                 return new PushData(token);
         }

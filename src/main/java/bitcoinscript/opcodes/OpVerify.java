@@ -4,7 +4,7 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 public class OpVerify implements OpCode {
-
+    @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String value = stack.pop();
         

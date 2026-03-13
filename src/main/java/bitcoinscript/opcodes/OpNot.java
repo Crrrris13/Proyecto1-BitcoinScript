@@ -4,7 +4,7 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 public class OpNot implements OpCode {
-    
+    @Override    
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String value = stack.pop();
         if (isTrue(value)) {
@@ -17,11 +17,11 @@ public class OpNot implements OpCode {
     private boolean isTrue(String value) {
         return !value.equals("0") && !value.equals("");
     }
-
+    @Override
     public String getName() {
         return "OP_NOT";
     }
-
+    @Override
     public String toString() {
         return getName();
     }
