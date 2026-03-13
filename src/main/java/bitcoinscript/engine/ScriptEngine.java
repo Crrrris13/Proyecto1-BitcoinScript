@@ -2,6 +2,11 @@ package bitcoinscript.engine;
 
 import bitcoinscript.opcodes.OpCode;
 import bitcoinscript.opcodes.OpCodeFactory;
+import bitcoinscript.opcodes.OpElse;
+import bitcoinscript.opcodes.OpEndIf;
+import bitcoinscript.opcodes.OpIf;
+import bitcoinscript.opcodes.OpNotIf;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -18,7 +23,7 @@ public class ScriptEngine {
         this.instructions = new ArrayList<>();
         this.traceMode = false;
         this.executionStack = new Stack<>();
-
+        this.elseStack = new Stack<>();
     }
     
     public void setTraceMode(boolean enabled) {
@@ -29,6 +34,7 @@ public class ScriptEngine {
         try {
             mainStack = new BitcoinStack();
             executionStack.clear();
+            elseStack.clear();
             instructions.clear();
             
             parseScript(scriptSig);
@@ -48,6 +54,15 @@ public class ScriptEngine {
                 
                 if (traceMode) {
                     System.out.println("Paso " + (i + 1) + ": " + instruction.getName());
+                }
+
+                boolean isControlFlow = instruction instanceof OpIf || instruction instanceof OpNotIf || instruction instanceof OpElse || instruction instanceof OpEndIf;
+                if (!isControlFlow && !shouldExecute()) {
+                    if (traceMode) {
+                        System.out.println("  Instrucción saltada debido a condición de control de flujo");
+                        System.out.println();
+                    }
+                    continue;
                 }
                 
                 instruction.execute(mainStack, this);
