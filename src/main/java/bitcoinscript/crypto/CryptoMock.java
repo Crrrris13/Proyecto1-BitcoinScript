@@ -5,6 +5,10 @@ public class CryptoMock {
     public static String hash160(String data) {
         return "HASH160(" + data + ")";
     }
+
+    public static String sha256(String data) {
+        return "SHA256(" + data + ")";
+    }
     
     public static boolean verifySignature(String signature, String pubkey) {
         if (!signature.startsWith("SIG_") || !pubkey.startsWith("PUB_")) {

@@ -10,6 +10,8 @@ public class OpCodeFactory {
                 return new OpDrop();
             case "OP_HASH160":
                 return new OpHash160();
+            case "OP_SHA256":
+                return new OpSha256();
             case "OP_EQUAL":
                 return new OpEqual();   
             case "OP_EQUALVERIFY":
