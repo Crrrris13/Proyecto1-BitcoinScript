@@ -167,5 +167,20 @@ public class ScriptEngine {
         }
     }
 
+    public static boolean isTrue(String value) {
+        if (value == null || value.isEmpty()) {
+            return false;
+        }
+
+        if (value.equals("0")) {
+            return false;
+        }
+
+        if(value.matches("0+")) {
+            return false;
+        }
+        return true;
+    }
+
 
 }

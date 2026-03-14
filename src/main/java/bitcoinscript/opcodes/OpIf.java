@@ -12,7 +12,7 @@ public class OpIf implements OpCode {
         if (condition) {
             String value = stack.pop();
 
-            boolean conditionValue = !value.equals("0") && !value.isEmpty();
+            boolean conditionValue = ScriptEngine.isTrue(value);
             engine.enterIf(conditionValue);
         } else {
             engine.enterIf(false);

@@ -7,9 +7,14 @@ public class OpNotIf implements OpCode {
 
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
-        String value = stack.pop();
-        boolean condicion = value.equals("0");
-        engine.enterIf(condicion);
+        if(engine.shouldExecute()) {
+            String value = stack.pop();
+            boolean condicion = !ScriptEngine.isTrue(value);
+            engine.enterIf(condicion);
+        }else {
+            engine.enterIf(false);
+        }
+        
     }
 
     @Override
