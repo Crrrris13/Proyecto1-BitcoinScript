@@ -16,14 +16,14 @@ public class ScriptEngine {
     private List<OpCode> instructions;
     private boolean traceMode;
     private Stack<Boolean> executionStack;
-    private Stack<Boolean> elseStack;
+    private Stack<Boolean> elseStateStack;
 
     public ScriptEngine() {
         this.mainStack = new BitcoinStack();
         this.instructions = new ArrayList<>();
         this.traceMode = false;
         this.executionStack = new Stack<>();
-        this.elseStack = new Stack<>();
+        this.elseStateStack = new Stack<>();
     }
     
     public void setTraceMode(boolean enabled) {
@@ -34,7 +34,7 @@ public class ScriptEngine {
         try {
             mainStack = new BitcoinStack();
             executionStack.clear();
-            elseStack.clear();
+            elseStateStack.clear();
             instructions.clear();
             
             parseScript(scriptSig);
@@ -138,7 +138,7 @@ public class ScriptEngine {
 
     public void enterIf(boolean condition) {
         executionStack.push(condition);
-        elseStack.push(false);
+        elseStateStack.push(false);
     }
 
     public void enterElse() {
@@ -146,15 +146,15 @@ public class ScriptEngine {
             throw new RuntimeException("OP_ELSE sin OP_IF correspondiente");
         }
 
-        if (elseStack.isEmpty()) {
+        if (elseStateStack.peek()) {
             throw new RuntimeException("OP_ELSE duplicado");
         }
 
         boolean wasExecuted = executionStack.pop();
         executionStack.push(!wasExecuted);
 
-        elseStack.pop();
-        elseStack.push(true);
+        elseStateStack.pop();
+        elseStateStack.push(true);
     }
 
     public void exitIf() {
@@ -162,8 +162,8 @@ public class ScriptEngine {
             throw new RuntimeException("OP_ENDIF sin OP_IF correspondiente");
         }
         executionStack.pop();
-        if (!elseStack.isEmpty()) {
-            elseStack.pop();
+        if (!elseStateStack.isEmpty()) {
+            elseStateStack.pop();
         }
     }
 
