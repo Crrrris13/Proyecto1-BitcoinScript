@@ -104,9 +104,6 @@ public class ScriptEngine {
         
         for (String token : tokens) {
             OpCode instruction = OpCodeFactory.getInstruction(token);
-            if (traceMode) {
-                System.out.println("Stack: " + mainStack);
-            }
             
             if (instruction == null) {
                 throw new RuntimeException("Token inválido: " + token);

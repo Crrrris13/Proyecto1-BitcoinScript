@@ -29,5 +29,26 @@ public class Main {
         String scriptPubKey3 = "OP_1 OP_IF OP_1 OP_ELSE OP_0 OP_ENDIF";
         view.showTestHeader(3, "Control de flujo con OP_IF y OP_ELSE");
         controller3.runDemo(scriptSig3, scriptPubKey3);
+
+        ScriptEngine engine4 = new ScriptEngine();
+        Controller controller4 = new Controller(engine4, view);
+        String scriptSig4    = "5 5";
+        String scriptPubKey4 = "OP_EQUAL";
+        view.showTestHeader(4, "Comparación de valores con OP_EQUAL");
+        controller4.runDemo(scriptSig4, scriptPubKey4);
+
+        ScriptEngine engine5 = new ScriptEngine();
+        Controller controller5 = new Controller(engine5, view);
+
+        String scriptSig5    = "5 3";
+        String scriptPubKey5 = "OP_ADD OP_8 OP_EQUAL OP_IF OP_10 OP_2 OP_SUB OP_ELSE OP_0 OP_ENDIF";
+        view.showTestHeader(5, "Operaciones aritméticas y control de flujo combinados");
+        controller5.runDemo(scriptSig5, scriptPubKey5);
+
+        String scriptSig6    = "5 5";
+        String scriptPubKey6 = "OP_EQUAL OP_IF OP_3 OP_1 OP_GREATERTHAN OP_IF OP_10 OP_ELSE OP_0 OP_ENDIF OP_ELSE OP_0 OP_ENDIF";
+        view.showTestHeader(6, "Control de flujo anidado con OP_IF");
+        controller5.runDemo(scriptSig6, scriptPubKey6);
+
     }
 }
