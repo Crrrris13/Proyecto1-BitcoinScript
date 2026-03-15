@@ -13,7 +13,7 @@ public class OpcodeTests {
         stack.push("2");
         stack.push("3");
 
-        new OpAdd().execute(stack);
+        new OpAdd().execute(stack, null);
 
         assertEquals("5", stack.peek());
     }
@@ -25,7 +25,7 @@ public class OpcodeTests {
         stack.push("3");
 
         assertThrows(RuntimeException.class,
-                () -> new OpAdd().execute(stack));
+                () -> new OpAdd().execute(stack, null));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class OpcodeTests {
         BitcoinStack stack = new BitcoinStack();
         stack.push("10");
 
-        new OpDup().execute(stack);
+        new OpDup().execute(stack, null);
 
         assertEquals("10", stack.pop());
         assertEquals("10", stack.pop());
@@ -44,7 +44,7 @@ public class OpcodeTests {
         BitcoinStack stack = new BitcoinStack();
         stack.push("10");
 
-        new OpDrop().execute(stack);
+        new OpDrop().execute(stack, null);
 
         assertTrue(stack.isEmpty());
     }
@@ -55,7 +55,7 @@ public class OpcodeTests {
         stack.push("5");
         stack.push("5");
 
-        new OpEqual().execute(stack);
+        new OpEqual().execute(stack, null);
 
         assertEquals("1", stack.peek());
     }
@@ -66,7 +66,7 @@ public class OpcodeTests {
         stack.push("5");
         stack.push("7");
 
-        new OpEqual().execute(stack);
+        new OpEqual().execute(stack, null);
 
         assertEquals("0", stack.peek());
     }
@@ -77,7 +77,7 @@ public class OpcodeTests {
         stack.push("1");
         stack.push("1");
 
-        new OpBooland().execute(stack);
+        new OpBooland().execute(stack, null);
 
         assertEquals("1", stack.peek());
     }
