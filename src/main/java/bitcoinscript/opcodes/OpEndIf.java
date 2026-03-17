@@ -3,6 +3,11 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_ENDIF.
+ * Finaliza un bloque condicional iniciado por OP_IF.
+ * Restablece el estado de ejecucion del ScriptEngine.
+ */
 public class OpEndIf implements OpCode {
     
     @Override

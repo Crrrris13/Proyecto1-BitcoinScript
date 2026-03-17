@@ -3,6 +3,13 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_EQUAL.
+ * Compara dos valores de la pila.
+ * Resultado:
+ * si son iguales (00 o 11) -> 1
+ * si son diferentes (01 o 10) -> 0
+ */
 public class OpEqual implements OpCode {
     
     @Override

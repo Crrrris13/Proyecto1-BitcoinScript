@@ -3,6 +3,13 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine; 
 
+/**
+ * La operacion OP_GREATERTHAN.
+ * Compara dos numeros.
+ * Resultados:
+ * si a > b: 1
+ * en otro caso: 0
+ */
 public class OpGreaterThan implements OpCode {
 
     @Override

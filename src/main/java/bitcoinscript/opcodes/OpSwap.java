@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_SWAP.
+ * Intercambia los dos elementos superiores de la pila.
+ * Ejemplo:
+ * [A, B] -> OP_SWAP -> [B, A]
+ */
 public class OpSwap implements OpCode {
 
     @Override

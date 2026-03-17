@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_DROP.
+ * Elimina el elemento superior de la pila.
+ * Ejemplo:
+ * [A, B] -> OP_DROP -> [B]
+ */
 public class OpDrop implements OpCode {
     
     @Override

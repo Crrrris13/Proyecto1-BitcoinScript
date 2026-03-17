@@ -1,7 +1,16 @@
 package bitcoinscript.opcodes;
 
+/**
+ * Factory de creacion de objetos OpCode. Se encarga de traducir los tokens de texto en instancias de OpCode.
+ */
+
 public class OpCodeFactory {
 
+    /**
+     * Convierte un token en una instruccion OpCode.
+     * @param token cadena que representa un opcode o un dato
+     * @return instancia de OpCode correspondiente, o null si es invalido
+     */
     public static OpCode getInstruction(String token) {
         switch (token) {
             case "OP_DUP":
@@ -91,8 +100,11 @@ public class OpCodeFactory {
                 return new OpLiteral("15", "OP_15");
             case "OP_16": 
                 return new OpLiteral("16", "OP_16");
-            default:
-                return new PushData(token);
         }
+        if (token.startsWith("OP_")) {
+            return null;   
+        }
+        return new PushData(token); 
+
     }
 }

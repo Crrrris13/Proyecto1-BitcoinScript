@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_ADD.
+ * Extrae dos valores de la pila, los suma y coloca el resultado nuevamente en la pila.
+ * Ejemplo:
+ * [2, 3] -> OP_ADD -> [5]
+ */
 public class OpAdd implements OpCode {
 
     @Override

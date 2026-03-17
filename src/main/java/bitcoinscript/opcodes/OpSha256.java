@@ -1,9 +1,15 @@
 package bitcoinscript.opcodes;
 
+import bitcoinscript.crypto.CryptoMock;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
-import bitcoinscript.crypto.CryptoMock;
 
+/**
+ * La operacion OP_SHA256.
+ * Hace una funcion hash SHA-256 simulada sobre el valor superior de la pila con el CryptoMock.
+ * Resultado:
+ * reemplaza el valor original por su hash SHA-256
+ */
 public class OpSha256 implements OpCode {
 
     @Override

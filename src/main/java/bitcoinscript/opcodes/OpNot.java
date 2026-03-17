@@ -3,6 +3,13 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_NOT.
+ * Invierte el valor logico del elemento superior de la pila.
+ * Resultados:
+ * valor verdadero (1): 0
+ * valor falso (0): 1
+ */
 public class OpNot implements OpCode {
     @Override    
     public void execute(BitcoinStack stack, ScriptEngine engine) {

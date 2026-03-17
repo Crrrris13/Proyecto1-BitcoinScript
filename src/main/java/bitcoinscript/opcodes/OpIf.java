@@ -3,6 +3,11 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_IF.
+ * Evalua un if basada en el valor superior de la pila y controla el flujo de ejecucion del script. Si el valor es verdadero,
+ * ejecuta el bloque if. Si es falso, se omite hasta OP_ELSE o OP_ENDIF
+ */
 public class OpIf implements OpCode {
     
     @Override

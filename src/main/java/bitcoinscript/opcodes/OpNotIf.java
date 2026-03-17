@@ -3,6 +3,11 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_NOTIF.
+ * si el valor es falso (0) : ejecuta el bloque
+ * si es verdadero (1) : omite el bloque
+ */
 public class OpNotIf implements OpCode {
 
     @Override

@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_DUP.
+ * Duplica el elemento superior de la pila.
+ * Ejemplo:
+ * [A] -> OP_DUP -> [A, A]
+ */
 public class OpDup implements OpCode {
     
     @Override

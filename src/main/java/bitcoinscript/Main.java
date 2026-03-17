@@ -4,7 +4,17 @@ import bitcoinscript.controller.Controller;
 import bitcoinscript.engine.ScriptEngine;
 import bitcoinscript.view.View;
 
+/**
+ * Punto de entrada de la aplicacion.
+ * Esta clase ejecuta una serie de pruebas demostrativas del interprete. Los resultados se muestran a traves de la clase View.
+ */
+
 public class Main {
+    /**
+     * Método principal del programa. Ejecuta varios escenarios de prueba para demostrar el funcionamiento del motor 
+     * de ejecucion de scripts.
+     * @param args argumentos de linea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
 
         View view = new View();

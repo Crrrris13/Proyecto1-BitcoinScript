@@ -3,6 +3,13 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_BOOLAND.
+ * Evalua dos valores como bool y realiza un AND logico.
+ * Resultados posibles:
+ * true AND true (es decir, 1 AND 1): 1
+ * cualquier otro caso: 0
+ */
 public class OpBooland implements OpCode {
 
     @Override

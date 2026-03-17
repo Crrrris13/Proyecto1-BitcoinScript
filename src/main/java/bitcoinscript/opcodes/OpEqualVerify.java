@@ -3,6 +3,11 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_EQUALVERIFY.
+ * Compara dos valores y falla si no son iguales. A diferencia de OP_EQUAL, no deja resultado en la pila
+ * y lanza una excepcion si los valores son distintos
+ */
 public class OpEqualVerify implements OpCode {
     
     @Override

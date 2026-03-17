@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_OVER.
+ * Copia el segundo elemento desde la cima de la pila y lo coloca en la parte superior.
+ * Ejemplo:
+ * [A, B] -> OP_OVER -> [A, B, A]
+ */
 public class OpOver implements OpCode {
 
     @Override

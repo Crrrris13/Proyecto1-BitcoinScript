@@ -3,6 +3,10 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * Implementa la operacion OP_ELSE.
+ * Cambia la rama de ejecucion dentro de una condicional.
+ */
 public class OpElse implements OpCode {
     
     @Override

@@ -4,8 +4,14 @@ import bitcoinscript.engine.ScriptEngine;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Conjunto de pruebas para validar el comportamiento de las condicionales de control de flujo en el ScriptEngine.
+ */
 public class ConditionalTests {
 
+    /**
+     * Verifica que el bloque IF se ejecuta cuando la condicion es verdadera.
+     */
     @Test
     void testIfTrueBranch() {
 
@@ -20,6 +26,9 @@ public class ConditionalTests {
         assertTrue(result);
     }
 
+    /**
+     * Verifica que se ejecuta el bloque ELSE cuando la condicion del IF es falsa.
+     */
     @Test
     void testIfElseBranch() {
 
@@ -34,6 +43,9 @@ public class ConditionalTests {
         assertTrue(result);
     }
 
+    /**
+     * Verifica que el motor maneja correctamente las estructuras IF.
+     */
     @Test
     void testNestedIf() {
 

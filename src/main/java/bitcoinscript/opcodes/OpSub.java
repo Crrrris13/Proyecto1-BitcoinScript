@@ -3,6 +3,12 @@ package bitcoinscript.opcodes;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_SUB.
+ * Extrae dos valores de la pila, los interpreta como enteros y realiza una resta (a - b).
+ * Ejemplo:
+ * [5, 3] -> OP_SUB -> [2]
+ */
 public class OpSub implements OpCode {
 
     public void execute(BitcoinStack stack, ScriptEngine engine) {

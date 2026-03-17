@@ -4,6 +4,12 @@ import bitcoinscript.crypto.CryptoMock;
 import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
+/**
+ * La operacion OP_HASH160.
+ * Aplica una funcion hash simulada sobre el valor superior de la pila con el CryptoMock.
+ * Resultado:
+ * reemplaza el valor por su hash
+ */
 public class OpHash160 implements OpCode {
     
     @Override
