@@ -55,12 +55,12 @@ Este script evalúa si `5 + 3 == 8`.
 
 ### Ejecución paso a paso (stack)
 
-[] (inicio)
-[5] (push 5)
-[3,5] (push 3)
-[8] (OP_ADD → 5 + 3)
-[8,8] (OP_8)
-[1] (OP_EQUAL → 8 == 8)
+- [] (inicio)
+- [5] (push 5)
+- [3,5] (push 3)
+- [8] (OP_ADD → 5 + 3)
+- [8,8] (OP_8)
+- [1] (OP_EQUAL → 8 == 8)
 
 ### Resultado
 
