@@ -4,26 +4,28 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 /**
- * La operacion OP_DROP.
- * Elimina el elemento superior de la pila.
+ * La operacion OP_SWAP.
+ * Intercambia los dos elementos superiores de la pila.
  * Ejemplo:
- * [A, B] -> OP_DROP -> [B]
+ * [A, B] -> OP_SWAP -> [B, A]
  */
-public class OpDrop implements OpCode {
-    
+public class OpSwap implements OpCode {
+
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
-        stack.drop();
+        String top1 = stack.pop(); 
+        String top2 = stack.pop(); 
+        stack.push(top1); 
+        stack.push(top2); 
     }
 
     @Override
     public String getName() {
-        return "OP_DROP";
+        return "OP_SWAP";
     }
 
     @Override
     public String toString() {
         return getName();
     }
-    
 }

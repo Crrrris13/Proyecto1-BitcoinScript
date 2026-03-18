@@ -4,31 +4,40 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 /**
- * La operacion OP_ADD.
- * Extrae dos valores de la pila, los suma y coloca el resultado nuevamente en la pila.
- * Ejemplo:
- * [2, 3] -> OP_ADD -> [5]
+ * La operacion OP_LESSTHAN.
+ * Compara dos numeros.
+ * Resultados:
+ * si a < b: 1
+ * en otro caso: 0
  */
-public class OpAdd implements OpCode {
-
+public class OpLessThan implements OpCode {
+    
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
         String b = stack.pop();
         String a = stack.pop();
+
         try {
-            int sum = Integer.parseInt(a) + Integer.parseInt(b);
-            stack.push(Integer.toString(sum));
+            long aValue = Long.parseLong(a);
+            long bValue = Long.parseLong(b);
+
+            if (aValue < bValue) {
+                stack.push("1");
+            } else {
+                stack.push("0");
+            }
         } catch (NumberFormatException e) {
             throw new RuntimeException("Los operandos deben ser números enteros");
         }
     }
+
     @Override
     public String getName() {
-        return "OP_ADD";
+        return "OP_LESSTHAN";
     }
+
     @Override
     public String toString() {
         return getName();
     }
-    
 }

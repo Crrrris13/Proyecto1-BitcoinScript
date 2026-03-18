@@ -4,21 +4,20 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 /**
- * La operacion OP_DROP.
- * Elimina el elemento superior de la pila.
- * Ejemplo:
- * [A, B] -> OP_DROP -> [B]
+ * La operacion OP_ENDIF.
+ * Finaliza un bloque condicional iniciado por OP_IF.
+ * Restablece el estado de ejecucion del ScriptEngine.
  */
-public class OpDrop implements OpCode {
+public class OpEndIf implements OpCode {
     
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
-        stack.drop();
+        engine.exitIf();
     }
 
     @Override
     public String getName() {
-        return "OP_DROP";
+        return "OP_ENDIF";
     }
 
     @Override

@@ -4,21 +4,19 @@ import bitcoinscript.engine.BitcoinStack;
 import bitcoinscript.engine.ScriptEngine;
 
 /**
- * La operacion OP_DROP.
- * Elimina el elemento superior de la pila.
- * Ejemplo:
- * [A, B] -> OP_DROP -> [B]
+ * Implementa la operacion OP_RETURN.
+ * Termina inmediatamente la ejecucion, marcandolo como invalido. Siempre provoca un fallo al lanzar una excepcion.
  */
-public class OpDrop implements OpCode {
+public class OpReturn implements OpCode {
     
     @Override
     public void execute(BitcoinStack stack, ScriptEngine engine) {
-        stack.drop();
+        throw new RuntimeException("El script ha fallado");
     }
 
     @Override
     public String getName() {
-        return "OP_DROP";
+        return "OP_RETURN";
     }
 
     @Override
